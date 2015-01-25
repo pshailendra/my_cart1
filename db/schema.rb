@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150124103427) do
+ActiveRecord::Schema.define(version: 20150125180251) do
 
   create_table "line_items", force: true do |t|
     t.integer  "quantity"
@@ -31,6 +31,9 @@ ActiveRecord::Schema.define(version: 20150124103427) do
     t.datetime "image_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
+
+  add_index "products", ["slug"], name: "index_products_on_slug", unique: true
 
 end
