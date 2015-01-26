@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150126105703) do
+ActiveRecord::Schema.define(version: 20150126123931) do
 
   create_table "carts", force: true do |t|
     t.datetime "created_at"
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20150126105703) do
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
 
   create_table "line_items", force: true do |t|
-    t.integer  "quantity"
+    t.integer  "quantity",   default: 1
     t.integer  "product_id"
     t.integer  "cart_id"
     t.datetime "created_at"
