@@ -13,6 +13,7 @@
       <ul style=" list-style: none;">
         <li style="float: left;"> <%= link_to 'Home', root_path %>&nbsp;&nbsp;|&nbsp;&nbsp;</li>
         <li style="float: left;"> <%= link_to 'Products', products_path %></li>
+        <li style="float: left;"> &nbsp;&nbsp;|&nbsp;&nbsp; <%= link_to 'SignUp', new_user_path %></li>
         <% if current_cart.present? %>
             <li style="float: left;">&nbsp;&nbsp;|&nbsp;&nbsp;<%= link_to 'Cart', cart_path(current_cart)  %></li>
         <% end %>
