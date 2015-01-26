@@ -30,7 +30,7 @@ gem 'spring',        group: :development
  gem 'bcrypt', '~> 3.1.7'
  gem 'paperclip'
  #gem 'simple_form'
- gem 'friendly_id'
+ gem 'friendly_id', '~> 5.1.0'
 
 
 # Use unicorn as the app server
