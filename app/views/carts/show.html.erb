@@ -1,4 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_cart_path(@cart) %> |
-<%= link_to 'Back', carts_path %>
+
+<%= @cart.line_items.each do |item| %>
+    <%= image_tag(item.product.image :thumb) %>
+    <%= item.product.title %>
+    <%= number_to_currency(item.product.price) %>
+    <%= item.quantity %>
+    <br><br>
+<% end %>
+
+
+
+<%= link_to 'Back', root_path %>
