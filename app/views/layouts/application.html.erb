@@ -6,9 +6,24 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-
+<body style=" background-color: #730E15; margin:0px; padding: 0px;">
+<table style="width: 90%; margin-left:auto; margin-right: auto; box-shadow: 0px 0px 8px #2a2a2a; border-left: solid 1px #000000; border-right: solid 1px #000000;">
+  <tr>
+    <td style="background-color: #CCCCCC; height: 45px;">
+      <ul style=" list-style: none;">
+        <li style="float: left;"> <%= link_to 'Home', root_path %>&nbsp;&nbsp;|&nbsp;&nbsp;</li>
+        <li style="float: left;"> <%= link_to 'Products', products_path %></li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td style="background-color: #ffffff; height: 545px; padding: 20px; vertical-align: top;">
 <%= yield %>
-
+    </td>
+  </tr>
+  <tr>
+    <td style="background-color: #333333; height: 45px;"> </td>
+  </tr>
+</table>
 </body>
 </html>

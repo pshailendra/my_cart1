@@ -18,7 +18,7 @@
         <td><%= product.description %></td>
         <td><%= product.price %></td>
         <td><%= image_tag(product.image :thumb) %></td>
-        <td><%= button_to 'Add to Cart', product %></td>
+        <td><%= button_to '                                      ', product, class: "create_product" %></td>
       </tr>
   <% end %>
   </tbody>
@@ -26,4 +26,3 @@
 
 <br>
 
-<%= link_to 'New Product', new_product_path %>
