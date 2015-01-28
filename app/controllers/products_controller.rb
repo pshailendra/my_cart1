@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   before_action :login_required
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  layout 'admin'
 
   # GET /products
   # GET /products.json
