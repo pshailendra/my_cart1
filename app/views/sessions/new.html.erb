@@ -1,0 +1,14 @@
+<h1>Login</h1>
+<hr style="border: 1px solid #CCCCCC">
+
+<p class="notice"> <%= notice %> </p>
+
+
+
+    <%= form_tag sessions_path do %>
+    <%= label_tag :email %>
+    <%= text_field_tag :email %> <br><br>
+    <%= label_tag :password %>
+    <%= password_field_tag :password %> <br><br>
+    <%= submit_tag 'Login' %>
+    <% end %>

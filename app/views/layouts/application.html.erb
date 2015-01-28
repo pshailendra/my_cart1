@@ -13,10 +13,17 @@
       <ul style=" list-style: none;">
         <li style="float: left;"> <%= link_to 'Home', root_path %>&nbsp;&nbsp;|&nbsp;&nbsp;</li>
         <li style="float: left;"> <%= link_to 'Products', products_path %></li>
-        <li style="float: left;"> &nbsp;&nbsp;|&nbsp;&nbsp; <%= link_to 'SignUp', new_user_path %></li>
+        <% if current_user.present? %>
+            <li style="float: left;"> &nbsp;&nbsp;|&nbsp;&nbsp; <%= link_to 'SignOut', session_path(current_user), method: :delete %></li>
+        <% else %>
+            <li style="float: left;"> &nbsp;&nbsp;|&nbsp;&nbsp; <%= link_to 'SignIn', new_session_path %></li>
+            <li style="float: left;"> &nbsp;&nbsp;|&nbsp;&nbsp; <%= link_to 'SignUp', new_user_path %></li>
+      <% end %>
         <% if current_cart.present? %>
             <li style="float: left;">&nbsp;&nbsp;|&nbsp;&nbsp;<%= link_to 'Cart', cart_path(current_cart)  %></li>
         <% end %>
+        <li style="width: 400px; margin-left: auto; margin-right: 20px; font-weight: bold; color:maroon; text-align: right; "> <%= notice %> <%= "Welcome: " + current_user.email if current_user   %> </li>
+
       </ul>
     </td>
   </tr>
